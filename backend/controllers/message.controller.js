@@ -6,8 +6,8 @@ export const sendMessage = async (req, res) => {
     try {
         const { message } = req.body;
         const { id: receiverId } = req.params;
-        //senderid which us 
-        const senderId = req.user._id  //for this we willbe usinf middleware iside meesage route
+        //sender id which us 
+        const senderId = req.user._id  //for this we will be using middleware inside message route
 
         let conversation = await Conversation.findOne({
             participants: { $all: [senderId, receiverId] },

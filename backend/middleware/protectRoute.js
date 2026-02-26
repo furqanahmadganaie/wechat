@@ -19,9 +19,9 @@ if (!authHeader || !authHeader.startsWith('Bearer ')) {
    
    console.log("token from backend ",token) 
 
-		if (!token) {
-			return res.status(401).json({ error: "Unauthorized - No Token Provided" });
-		}
+		// if (!token) {
+		// 	return res.status(401).json({ error: "Unauthorized - No Token Provided" });
+		// }
 
 		const decoded = jwt.verify(token, process.env.JWT_SECRET);
 

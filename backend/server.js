@@ -1,6 +1,6 @@
  import express from 'express'
 import dotenv from 'dotenv'
-import path from 'path'
+// import path from 'path'
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 //import authroutes
@@ -10,7 +10,10 @@ import userRoutes from './routes/user.routes.js'
 
 import connectToMongoDB from './db/connectToMongoDB.js';
 import {app, server} from './socket/socket.js'
-app.use(cors());
+
+app.use(cors({
+    origin:"http://localhost:5173"
+}));
 
 
 
